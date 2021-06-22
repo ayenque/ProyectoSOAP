@@ -28,5 +28,10 @@ namespace UPC.PP1.BL.DataAcces
                 throw ex;
             }
         }
+
+        public Cliente Buscar(int nu_dni)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
