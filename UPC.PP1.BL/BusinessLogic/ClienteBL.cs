@@ -8,7 +8,7 @@ using UPC.PP1.BL.DataAcces;
 namespace UPC.PP1.BL.BusinessLogic
 {
 
-    class ClienteBL
+    public class ClienteBL
     {
         private readonly ClienteDA objClienteDA;
 

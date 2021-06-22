@@ -4,14 +4,26 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using UPC.PP1.BL;
+using UPC.PP1.BL.BusinessLogic;
 
-// NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "ClienteService" in code, svc and config file together.
 public class ClienteService : IClienteService
 {
-
+    private readonly ClienteBL objClienteBL;
+    public ClienteService()
+    {
+        objClienteBL = new ClienteBL();
+    }
 
     public int Registrar(ClienteModel objCliente)
     {
-        throw new NotImplementedException();
+        var cliente = new Cliente
+        {
+            nu_dni = objCliente.Dni,
+            tx_nombre = objCliente.Nombres,
+            tx_estado = objCliente.Estado
+        };
+
+        return objClienteBL.Registrar(cliente);
     }
 }

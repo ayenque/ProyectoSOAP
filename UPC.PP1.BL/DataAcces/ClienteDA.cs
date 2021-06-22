@@ -17,21 +17,22 @@ namespace UPC.PP1.BL.DataAcces
 
         public int Registrar(Cliente objCliente)
         {
-            try
-            {
                 dc.Clientes.InsertOnSubmit(objCliente);
+                dc.SubmitChanges();
                 return objCliente.nu_dni;
-            }
-            catch (Exception ex)
-            {
-
-                throw ex;
-            }
         }
 
-        public Cliente Buscar(int nu_dni)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
+
+
+
+
+
+
+/**
+public Cliente Buscar(int nu_dni)
+{
+    throw new NotImplementedException();
+}
+**/
