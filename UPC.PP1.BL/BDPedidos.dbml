@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BDPedidos" Class="BDPedidosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=dbupcdsddevb.cmsjiga1hfwr.us-east-2.rds.amazonaws.com;Initial Catalog=BDPedidos;User ID=admin" SettingsObjectName="UPC.PP1.BL.Properties.Settings" SettingsPropertyName="BDPedidosConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Cliente" Member="Clientes">
+    <Type Name="Cliente">
+      <Column Name="nu_dni" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tx_nombre" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tx_estado" Type="System.String" DbType="NVarChar(1)" CanBeNull="true" />
+      <Association Name="Cliente_Pedido" Member="Pedidos" ThisKey="nu_dni" OtherKey="nu_cod_cliente" Type="Pedido" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Pedidos" Member="Pedidos">
+    <Type Name="Pedido">
+      <Column Name="nu_cod_pedido" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nu_cod_cliente" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nu_cod_producto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="tx_desc_pedido" Type="System.String" DbType="Text" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="fec_fec_pedido" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="tx_estado_pedido" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="Cliente_Pedido" Member="Cliente" ThisKey="nu_cod_cliente" OtherKey="nu_dni" Type="Cliente" IsForeignKey="true" />
+      <Association Name="Producto_Pedido" Member="Producto" ThisKey="nu_cod_producto" OtherKey="nu_cod" Type="Producto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Producto" Member="Productos">
+    <Type Name="Producto">
+      <Column Name="nu_cod" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="tx_nom_producto" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="Producto_Pedido" Member="Pedidos" ThisKey="nu_cod" OtherKey="nu_cod_producto" Type="Pedido" />
+    </Type>
+  </Table>
+</Database>
