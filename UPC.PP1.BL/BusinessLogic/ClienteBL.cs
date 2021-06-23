@@ -21,9 +21,16 @@ namespace UPC.PP1.BL.BusinessLogic
 
         public int Registrar(Cliente objCliente)
         {
-           return objClienteDA.Registrar(objCliente);
+            try
+            {
+                return objClienteDA.Registrar(objCliente);
+            }
+            catch (Exception ex)
+            {
 
-        }
+                throw ex;
+            }
+         }
     }
 
     /**
