@@ -31,7 +31,51 @@ namespace UPC.PP1.BL.BusinessLogic
                 throw ex;
             }
          }
+        public Cliente Buscar(int dniCliente)
+        {
+            try
+            {
+                return objClienteDA.Buscar(dniCliente);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+
+        public bool Modificar(Cliente objCliente)
+        {
+            try
+            {
+                return objClienteDA.Modificar(objCliente);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
+        public bool Eliminar(int dniCliente)
+        {
+            try
+            {
+                return objClienteDA.Eliminar(dniCliente);
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
     }
+
+
+
 
     /**
     class ClienteBL
