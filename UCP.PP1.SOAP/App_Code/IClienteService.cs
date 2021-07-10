@@ -11,7 +11,20 @@ public interface IClienteService
 {
     [OperationContract]  
     int Registrar(ClienteModel objCliente);
+
+    [OperationContract]
+    ClienteModel Buscar(int dniCliente);
+
+
+    [OperationContract]
+    bool Modificar(ClienteModel objCliente);
+
+    [OperationContract]
+    bool Eliminar(int dniCliente);
+
 }
+
+
 
 
 [DataContract]
@@ -21,7 +34,7 @@ public class ClienteModel
     public int Dni { get; set; }
 
     [DataMember]
-    public string Nombres { get; set; }
+    public string Nombres { get; set; }  // el signo de pregunta indica que puede ser null
 
     [DataMember]
     public string Estado { get; set; }

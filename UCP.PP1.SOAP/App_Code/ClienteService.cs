@@ -15,6 +15,22 @@ public class ClienteService : IClienteService
         objClienteBL = new ClienteBL();
     }
 
+    public ClienteModel Buscar(int dniCliente)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool Eliminar(int dniCliente)
+    {
+        throw new NotImplementedException();
+    }
+
+    public bool Modificar(ClienteModel objCliente)
+    {
+        throw new NotImplementedException();
+    }
+
+
     public int Registrar(ClienteModel objCliente)
     {
         var cliente = new Cliente
