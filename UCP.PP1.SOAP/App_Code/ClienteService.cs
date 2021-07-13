@@ -17,29 +17,86 @@ public class ClienteService : IClienteService
 
     public ClienteModel Buscar(int dniCliente)
     {
-        throw new NotImplementedException();
+        var objCliente = new ClienteModel();
+
+        try
+        {
+                var cliente = objClienteBL.Buscar(dniCliente);
+
+                objCliente.Dni = cliente.nu_dni;
+                objCliente.Nombres = cliente.tx_nombre;
+                objCliente.Estado = cliente.tx_estado;
+
+        }
+        catch (Exception ex)
+        {
+
+            throw ex;
+            //objCliente.MessageError = ex.Message;
+        }
+
+        return objCliente;
+
     }
 
     public bool Eliminar(int dniCliente)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var resultado = objClienteBL.Eliminar(dniCliente);
+            return resultado;
+        }
+        catch (Exception ex)
+        {
+
+            throw ex;
+        }
     }
 
     public bool Modificar(ClienteModel objCliente)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var cliente = new Cliente()
+            {
+                nu_dni = objCliente.Dni,
+                tx_nombre = objCliente.Nombres,
+                tx_estado = objCliente.Estado,
+            };
+
+            var resultado = objClienteBL.Modificar(cliente);
+
+            return resultado;
+        }
+        catch (Exception ex)
+        {
+
+            throw ex;
+        }
     }
 
 
     public int Registrar(ClienteModel objCliente)
     {
-        var cliente = new Cliente
+        try
         {
-            nu_dni = objCliente.Dni,
-            tx_nombre = objCliente.Nombres,
-            tx_estado = objCliente.Estado
-        };
+            var cliente = new Cliente()
+            {
+                nu_dni = objCliente.Dni,
+                tx_nombre = objCliente.Nombres,
+                tx_estado = objCliente.Estado
+            };
 
-        return objClienteBL.Registrar(cliente);
+            var dni = objClienteBL.Registrar(cliente);
+
+            return dni;
+        }
+        catch (Exception ex)
+        {
+
+            throw ex;
+        }
+        
+ 
     }
 }

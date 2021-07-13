@@ -34,9 +34,12 @@ public class ClienteModel
     public int Dni { get; set; }
 
     [DataMember]
-    public string Nombres { get; set; }  // el signo de pregunta indica que puede ser null
+    public string Nombres { get; set; } 
 
     [DataMember]
     public string Estado { get; set; }
+
+    [DataMember]
+    public string MessageError { get; set; }
 }
 

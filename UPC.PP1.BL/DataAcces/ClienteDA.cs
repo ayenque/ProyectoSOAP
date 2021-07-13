@@ -110,12 +110,3 @@ namespace UPC.PP1.BL.DataAcces
 
 
 
-
-
-
-/**
-public Cliente Buscar(int nu_dni)
-{
-    throw new NotImplementedException();
-}
-**/

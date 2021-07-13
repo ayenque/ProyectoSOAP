@@ -30,6 +30,8 @@ Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "UCP.PP1.SOAP", "UCP.PP1.SOA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPC.PP1.UT", "UPC.PP1.UT\UPC.PP1.UT.csproj", "{92EA02B3-0394-4909-9BA9-30277520F75A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UPC.PP1.REST", "UPC.PP1.REST\UPC.PP1.REST.csproj", "{2DDF2DEB-62F9-4D11-AF42-F1C1C433062D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -48,6 +50,10 @@ Global
 		{92EA02B3-0394-4909-9BA9-30277520F75A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92EA02B3-0394-4909-9BA9-30277520F75A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92EA02B3-0394-4909-9BA9-30277520F75A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2DDF2DEB-62F9-4D11-AF42-F1C1C433062D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2DDF2DEB-62F9-4D11-AF42-F1C1C433062D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2DDF2DEB-62F9-4D11-AF42-F1C1C433062D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2DDF2DEB-62F9-4D11-AF42-F1C1C433062D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

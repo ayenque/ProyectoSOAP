@@ -45,6 +45,19 @@ namespace UPC.PP1.BL.BusinessLogic
         }
 
 
+        public Cliente BuscarconFind(int dniCliente)
+        {
+            try
+            {
+                return objClienteDA.BuscarconFind(dniCliente);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
         public bool Modificar(Cliente objCliente)
         {
             try
