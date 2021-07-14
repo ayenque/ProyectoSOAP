@@ -43,9 +43,10 @@ namespace UPC.PP1.UT
         {
             var objCliente = new Cliente()
             {
+                id_cliente = 4,
                 tipo_doc = "DNI",
+                tx_nombres = "Nadia Alvarez Perez",
                 nu_doc = "46984631",
-                tx_nombres = "Nadia Alvarez",
                 email = "nadia.alvarez@hotmail.com",
                 nu_telefono = "+514656594",
                 tx_direccion = "Av. La Marina 1515 - San Miguel",

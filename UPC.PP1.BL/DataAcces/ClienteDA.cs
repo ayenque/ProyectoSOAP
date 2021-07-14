@@ -73,15 +73,73 @@ namespace UPC.PP1.BL.DataAcces
             try
             {
                 var query = dc.Clientes.First(x => x.id_cliente.Equals(objCliente.id_cliente));
-                
-                query.tipo_doc = objCliente.tipo_doc;
-                query.nu_doc = objCliente.nu_doc;
-                query.tx_nombres = objCliente.tx_nombres;
-                query.email = objCliente.email;
-                query.nu_telefono = objCliente.nu_telefono;
-                query.tx_direccion = objCliente.tx_direccion;
+
+                if (String.IsNullOrEmpty(objCliente.tipo_doc))
+                {
+                    query.tipo_doc = query.tipo_doc;
+                }
+                else
+                {
+                    query.tipo_doc = objCliente.tipo_doc;
+                };
+
+                if (String.IsNullOrEmpty(objCliente.nu_doc))
+                {
+                    query.nu_doc = query.nu_doc;
+                }
+                else
+                {
+                    query.nu_doc = objCliente.nu_doc;
+                };
+
+                if (String.IsNullOrEmpty(objCliente.tx_nombres))
+                {
+                    query.tx_nombres = query.tx_nombres;
+                }
+                else
+                {
+                    query.tx_nombres = objCliente.tx_nombres;
+                };
+
+
+                if (String.IsNullOrEmpty(objCliente.email))
+                {
+                    query.email = query.email;
+                }
+                else
+                {
+                    query.email = objCliente.email;
+                };
+
+                if (String.IsNullOrEmpty(objCliente.nu_telefono))
+                {
+                    query.nu_telefono = query.nu_telefono;
+                }
+                else
+                {
+                    query.nu_telefono = objCliente.nu_telefono;
+                };
+
+                if (String.IsNullOrEmpty(objCliente.tx_direccion))
+                {
+                    query.tx_direccion = query.tx_direccion;
+                }
+                else
+                {
+                    query.tx_direccion = objCliente.tx_direccion;
+                };
+
+                if (String.IsNullOrEmpty(objCliente.tx_estado))
+                {
+                    query.tx_estado = query.tx_estado;
+                }
+                else
+                {
+                    query.tx_estado = objCliente.tx_estado;
+                };
+
                 query.fec_actualizacion = DateTime.Now;
-                query.tx_estado = objCliente.tx_estado;
+
 
                 dc.SubmitChanges();
 

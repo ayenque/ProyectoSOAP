@@ -67,6 +67,7 @@ public class ClienteService : IClienteService
         {
             var cliente = new Cliente()
             {
+                id_cliente = objCliente.Id,
                 tipo_doc = objCliente.TipoDoc,
                 nu_doc = objCliente.NuDoc,
                 tx_nombres = objCliente.Nombres,
