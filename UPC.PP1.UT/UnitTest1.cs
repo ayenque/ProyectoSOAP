@@ -13,24 +13,28 @@ namespace UPC.PP1.UT
         { 
             var objCliente = new Cliente()
             {
-                nu_dni = 45987656,
-                tx_nombre = "Cliente Prueba Unitaria",
-                tx_estado = "N"
+                tipo_doc = "DNI",
+                nu_doc = "46984631",
+                tx_nombres = "Nadia Alvarez",
+                email = "nadia@nadie.com",
+                nu_telefono = "+514656594",
+                tx_direccion = "Av. La Marina 1515 - San Miguel",
+                tx_estado = "Activo",
             };
 
             var objClienteBL = new ClienteBL();
-            var dni = objClienteBL.Registrar(objCliente);
+            var idCliente = objClienteBL.Registrar(objCliente);
 
-            Assert.AreEqual(45987656, dni);
+            Assert.AreEqual(4, idCliente);
         }
 
         [TestMethod]
         public void Buscar()
         {
             var objClienteBL = new ClienteBL();
-            var objCliente = objClienteBL.Buscar(45987656);
+            var objCliente = objClienteBL.Buscar(2);
 
-            Assert.AreEqual(45987656, objCliente.nu_dni);
+            Assert.AreEqual(2, objCliente.id_cliente);
         }
 
 
@@ -39,9 +43,13 @@ namespace UPC.PP1.UT
         {
             var objCliente = new Cliente()
             {
-                nu_dni = 43952353,
-                tx_nombre = "Cliente Prueba Modificado",
-                tx_estado = "S"
+                tipo_doc = "DNI",
+                nu_doc = "46984631",
+                tx_nombres = "Nadia Alvarez",
+                email = "nadia.alvarez@hotmail.com",
+                nu_telefono = "+514656594",
+                tx_direccion = "Av. La Marina 1515 - San Miguel",
+                tx_estado = "Inactivo",
             };
 
             var objClienteBL = new ClienteBL();
@@ -54,7 +62,7 @@ namespace UPC.PP1.UT
         public void Eliminar()
         {
             var objClienteBL = new ClienteBL();
-            var resultado = objClienteBL.Eliminar(45987656);
+            var resultado = objClienteBL.Eliminar(4);
 
             Assert.AreEqual(true, resultado);
         }

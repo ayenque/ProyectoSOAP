@@ -13,14 +13,14 @@ public interface IClienteService
     int Registrar(ClienteModel objCliente);
 
     [OperationContract]
-    ClienteModel Buscar(int dniCliente);
+    ClienteModel Buscar(int idCliente);
 
 
     [OperationContract]
     bool Modificar(ClienteModel objCliente);
 
     [OperationContract]
-    bool Eliminar(int dniCliente);
+    bool Eliminar(int idCliente);
 
 }
 
@@ -31,10 +31,31 @@ public interface IClienteService
 public class ClienteModel
 {
     [DataMember]
-    public int Dni { get; set; }
+    public int Id { get; set; }
+
+    [DataMember]
+    public string TipoDoc { get; set; }
+
+    [DataMember]
+    public string NuDoc { get; set; }
 
     [DataMember]
     public string Nombres { get; set; } 
+
+    [DataMember]
+    public string Email { get; set; }
+
+    [DataMember]
+    public string Telefono { get; set; }
+
+    [DataMember]
+    public string Direccion { get; set; }
+
+    [DataMember]
+    public DateTime? FecCreacion { get; set; }
+
+    [DataMember]
+    public DateTime? FecActualizacion { get; set; }
 
     [DataMember]
     public string Estado { get; set; }

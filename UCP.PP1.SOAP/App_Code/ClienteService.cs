@@ -15,17 +15,25 @@ public class ClienteService : IClienteService
         objClienteBL = new ClienteBL();
     }
 
-    public ClienteModel Buscar(int dniCliente)
+    public ClienteModel Buscar(int idCliente)
     {
         var objCliente = new ClienteModel();
 
         try
         {
-                var cliente = objClienteBL.Buscar(dniCliente);
+                var cliente = objClienteBL.Buscar(idCliente);
 
-                objCliente.Dni = cliente.nu_dni;
-                objCliente.Nombres = cliente.tx_nombre;
+                objCliente.Id = cliente.id_cliente;
+                objCliente.TipoDoc = cliente.tipo_doc;
+                objCliente.NuDoc = cliente.nu_doc;
+                objCliente.Nombres = cliente.tx_nombres;
+                objCliente.Email = cliente.email;
+                objCliente.Telefono = cliente.email;
+                objCliente.Direccion = cliente.tx_direccion;
+                objCliente.FecCreacion = cliente.fec_creacion;
+                objCliente.FecActualizacion = cliente.fec_actualizacion;
                 objCliente.Estado = cliente.tx_estado;
+
 
         }
         catch (Exception ex)
@@ -39,11 +47,11 @@ public class ClienteService : IClienteService
 
     }
 
-    public bool Eliminar(int dniCliente)
+    public bool Eliminar(int idCliente)
     {
         try
         {
-            var resultado = objClienteBL.Eliminar(dniCliente);
+            var resultado = objClienteBL.Eliminar(idCliente);
             return resultado;
         }
         catch (Exception ex)
@@ -59,8 +67,12 @@ public class ClienteService : IClienteService
         {
             var cliente = new Cliente()
             {
-                nu_dni = objCliente.Dni,
-                tx_nombre = objCliente.Nombres,
+                tipo_doc = objCliente.TipoDoc,
+                nu_doc = objCliente.NuDoc,
+                tx_nombres = objCliente.Nombres,
+                email = objCliente.Email,
+                nu_telefono = objCliente.Telefono,
+                tx_direccion = objCliente.Direccion,
                 tx_estado = objCliente.Estado,
             };
 
@@ -82,14 +94,19 @@ public class ClienteService : IClienteService
         {
             var cliente = new Cliente()
             {
-                nu_dni = objCliente.Dni,
-                tx_nombre = objCliente.Nombres,
-                tx_estado = objCliente.Estado
+
+                tipo_doc = objCliente.TipoDoc,
+                nu_doc = objCliente.NuDoc,
+                tx_nombres = objCliente.Nombres,
+                email = objCliente.Email,
+                nu_telefono = objCliente.Telefono,
+                tx_direccion = objCliente.Direccion,
+                tx_estado = objCliente.Estado,
             };
 
-            var dni = objClienteBL.Registrar(cliente);
+            var id = objClienteBL.Registrar(cliente);
 
-            return dni;
+            return id;
         }
         catch (Exception ex)
         {

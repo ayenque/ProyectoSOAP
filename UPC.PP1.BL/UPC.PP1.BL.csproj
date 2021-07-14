@@ -42,10 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BDPedidos.designer.cs">
+    <Compile Include="BDClientes.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BDPedidos.dbml</DependentUpon>
+      <DependentUpon>BDClientes.dbml</DependentUpon>
     </Compile>
     <Compile Include="BusinessLogic\ClienteBL.cs" />
     <Compile Include="DataAcces\ClienteDA.cs" />
@@ -58,13 +58,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="BDPedidos.dbml">
+    <None Include="BDClientes.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>BDPedidos.designer.cs</LastGenOutput>
+      <LastGenOutput>BDClientes.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="BDPedidos.dbml.layout">
-      <DependentUpon>BDPedidos.dbml</DependentUpon>
+    <None Include="BDClientes.dbml.layout">
+      <DependentUpon>BDClientes.dbml</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

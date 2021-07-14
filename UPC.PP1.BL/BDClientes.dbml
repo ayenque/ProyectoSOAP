@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BDPedidos" Class="BDClientesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=dbupcdsddevb.cmsjiga1hfwr.us-east-2.rds.amazonaws.com;Initial Catalog=BDPedidos;Persist Security Info=True;User ID=admin" SettingsObjectName="UPC.PP1.BL.Properties.Settings" SettingsPropertyName="BDPedidosConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Cliente" Member="Clientes">
+    <Type Name="Cliente">
+      <Column Name="id_cliente" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="tipo_doc" Type="System.String" DbType="NChar(10)" CanBeNull="true" />
+      <Column Name="nu_doc" Type="System.String" DbType="NVarChar(14)" CanBeNull="true" />
+      <Column Name="tx_nombres" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="nu_telefono" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="tx_direccion" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="fec_creacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fec_actualizacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="tx_estado" Type="System.String" DbType="NVarChar(10)" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>

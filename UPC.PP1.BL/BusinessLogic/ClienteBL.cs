@@ -31,11 +31,11 @@ namespace UPC.PP1.BL.BusinessLogic
                 throw ex;
             }
          }
-        public Cliente Buscar(int dniCliente)
+        public Cliente Buscar(int idCliente)
         {
             try
             {
-                return objClienteDA.Buscar(dniCliente);
+                return objClienteDA.Buscar(idCliente);
             }
             catch (Exception ex)
             {
@@ -45,11 +45,11 @@ namespace UPC.PP1.BL.BusinessLogic
         }
 
 
-        public Cliente BuscarconFind(int dniCliente)
+        public Cliente BuscarconFind(int idCliente)
         {
             try
             {
-                return objClienteDA.BuscarconFind(dniCliente);
+                return objClienteDA.BuscarconFind(idCliente);
             }
             catch (Exception ex)
             {
@@ -71,11 +71,11 @@ namespace UPC.PP1.BL.BusinessLogic
             }
         }
 
-        public bool Eliminar(int dniCliente)
+        public bool Eliminar(int idCliente)
         {
             try
             {
-                return objClienteDA.Eliminar(dniCliente);
+                return objClienteDA.Eliminar(idCliente);
 
             }
             catch (Exception ex)
