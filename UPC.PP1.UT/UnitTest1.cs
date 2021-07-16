@@ -68,6 +68,15 @@ namespace UPC.PP1.UT
             Assert.AreEqual(true, resultado);
         }
 
+        [TestMethod]
+        public void DevolverClientes()
+        {
+            var objClienteBL = new ClienteBL();
+            var resultado = objClienteBL.DevolverClientes();
+            Console.WriteLine(resultado);
+            Assert.AreEqual(1, resultado[0].id_cliente);
+        }
+
 
     }
 }

@@ -114,7 +114,51 @@ public class ClienteService : IClienteService
 
             throw ex;
         }
-        
- 
     }
+
+
+    public List<ClienteModel> DevolverClientes()
+    {
+        try
+        {
+
+            List<Cliente> lc = new List<Cliente>();
+            lc = objClienteBL.DevolverClientes();
+
+            List<ClienteModel> lcm = new List<ClienteModel>();
+
+            int n = 0;
+            foreach(Cliente cl in lc)
+            {
+                var clienteModel = new ClienteModel()
+                {
+                    Id = cl.id_cliente,
+                    TipoDoc = cl.tipo_doc,
+                    NuDoc = cl.nu_doc,
+                    Nombres = cl.tx_nombres,
+                    Email = cl.email,
+                    Telefono = cl.nu_telefono,
+                    Direccion = cl.tx_direccion,
+                    FecCreacion = cl.fec_creacion,
+                    FecActualizacion = cl.fec_actualizacion,
+                    Estado = cl.tx_estado
+                };
+
+                lcm.Add(clienteModel);
+                n++;
+            }
+
+            //List <ClienteModel> listClientModel = listClient.ConvertAll(
+            //    new Converter<Cliente, ClienteModel>(ClientetoClienteModel));
+
+            return lcm;
+        }
+        catch (Exception ex)
+        {
+
+            throw ex;
+        }
+    }
+
+
 }

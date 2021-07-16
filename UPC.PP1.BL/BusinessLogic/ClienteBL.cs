@@ -85,6 +85,20 @@ namespace UPC.PP1.BL.BusinessLogic
             }
         }
 
+        public List<Cliente> DevolverClientes()
+        {
+            try
+            {
+                return objClienteDA.DevolverClientes();
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+
     }
 
 

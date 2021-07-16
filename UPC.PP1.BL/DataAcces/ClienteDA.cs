@@ -67,6 +67,23 @@ namespace UPC.PP1.BL.DataAcces
             }
         }
 
+        public List<Cliente> DevolverClientes()
+        {
+            try
+            {
+                
+                var query = (from cl in dc.Clientes 
+                             select cl).ToList();
+                return query;
+
+
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
 
         public bool Modificar(Cliente objCliente)
         {

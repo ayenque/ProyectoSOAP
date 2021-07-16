@@ -22,6 +22,9 @@ public interface IClienteService
     [OperationContract]
     bool Eliminar(int idCliente);
 
+    [OperationContract]
+    List<ClienteModel> DevolverClientes();
+
 }
 
 
