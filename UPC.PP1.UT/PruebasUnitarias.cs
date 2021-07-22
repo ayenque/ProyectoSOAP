@@ -6,7 +6,7 @@ using UPC.PP1.BL.BusinessLogic;
 namespace UPC.PP1.UT
 {
     [TestClass]
-    public class UnitTest1
+    public class PruebasUnitarias
     {
         [TestMethod]
         public void Registrar()
