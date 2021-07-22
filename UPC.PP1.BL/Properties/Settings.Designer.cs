@@ -33,5 +33,16 @@ namespace UPC.PP1.BL.Properties {
                 return ((string)(this["BDPedidosConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=dbupcdsddevb.cmsjiga1hfwr.us-east-2.rds.amazonaws.com;Initial Catalog" +
+            "=BDPedidos;Persist Security Info=True;User ID=admin;Password=jUi-kUN:>^Jsdo2H")]
+        public string BDPedidosConnectionString1 {
+            get {
+                return ((string)(this["BDPedidosConnectionString1"]));
+            }
+        }
     }
 }
